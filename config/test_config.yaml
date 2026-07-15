@@ -24,6 +24,14 @@ suites:
         - transactions
       exclude:
         - wip
+  retry:
+    enabled: true
+    tags:
+      include:
+        - regression
+        - retry
+      exclude:
+        - wip
 
 data:
   users_file: data/test_data/users.json
