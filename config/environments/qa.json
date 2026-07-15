@@ -1,0 +1,35 @@
+{
+  "environment": "qa",
+  "api": {
+    "base_url": "https://qa-api.testcherrypick.local",
+    "version": "v1",
+    "timeout_seconds": 45,
+    "retries": 3,
+    "endpoints": {
+      "login": "/auth/login",
+      "accounts": "/accounts",
+      "transactions": "/transactions"
+    }
+  },
+  "ui": {
+    "base_url": "https://qa.testcherrypick.local",
+    "browser": "chrome",
+    "implicit_wait_seconds": 10
+  },
+  "database": {
+    "host": "qa-db.internal",
+    "port": 5432,
+    "name": "tcp_qa",
+    "pool": {
+      "min": 2,
+      "max": 10
+    }
+  },
+  "feature_flags": {
+    "new_login_flow": true,
+    "beta_dashboard": false
+  },
+  "credentials": {
+    "vault_path": "secret/qa/testcherrypick"
+  }
+}

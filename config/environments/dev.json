@@ -1,0 +1,35 @@
+{
+  "environment": "dev",
+  "api": {
+    "base_url": "https://dev-api.testcherrypick.local",
+    "version": "v1",
+    "timeout_seconds": 30,
+    "retries": 2,
+    "endpoints": {
+      "login": "/auth/login",
+      "accounts": "/accounts",
+      "transactions": "/transactions"
+    }
+  },
+  "ui": {
+    "base_url": "https://dev.testcherrypick.local",
+    "browser": "headlesschrome",
+    "implicit_wait_seconds": 5
+  },
+  "database": {
+    "host": "dev-db.internal",
+    "port": 5432,
+    "name": "tcp_dev",
+    "pool": {
+      "min": 1,
+      "max": 5
+    }
+  },
+  "feature_flags": {
+    "new_login_flow": true,
+    "beta_dashboard": true
+  },
+  "credentials": {
+    "vault_path": "secret/dev/testcherrypick"
+  }
+}
