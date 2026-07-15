@@ -1,0 +1,27 @@
+# Suite-level toggles and tag selection.
+suites:
+  api:
+    enabled: true
+    tags:
+      include:
+        - smoke
+        - regression
+      exclude:
+        - wip
+  ui:
+    enabled: true
+    tags:
+      include:
+        - smoke
+      exclude:
+        - flaky
+        - wip
+
+data:
+  users_file: data/test_data/users.json
+  accounts_file: data/test_data/accounts.json
+  transactions_file: data/test_data/transactions.json
+
+thresholds:
+  api_response_ms: 800
+  page_load_ms: 3000

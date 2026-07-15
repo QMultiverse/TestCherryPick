@@ -1,0 +1,27 @@
+# Global framework settings shared across all environments.
+framework:
+  name: TestCherryPick
+  default_environment: qa
+  output_dir: results
+  log_level: INFO
+
+reporting:
+  formats:
+    - xml
+    - html
+  screenshots_on_failure: true
+  retain_days: 14
+
+execution:
+  parallel: false
+  max_workers: 1
+  default_timeout_seconds: 60
+  retry_failed: 1
+
+integrations:
+  jira:
+    enabled: false
+    project_key: TCP
+  slack:
+    enabled: false
+    channel: "#qa-automation"
