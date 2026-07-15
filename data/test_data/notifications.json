@@ -1,0 +1,43 @@
+{
+  "templates": [
+    {
+      "template_id": "tmpl-suite-summary",
+      "channel": "email",
+      "subject": "Automation run summary",
+      "body": {
+        "greeting": "Hello team,",
+        "sections": [
+          "suite_totals",
+          "failed_tests",
+          "duration"
+        ],
+        "footer": "Sent by TestCherryPick automation"
+      }
+    },
+    {
+      "template_id": "tmpl-failure-alert",
+      "channel": "webhook",
+      "subject": "Failure alert",
+      "body": {
+        "payload": {
+          "type": "alert",
+          "severity": "high",
+          "fields": [
+            "suite",
+            "failed_count",
+            "first_failure"
+          ]
+        }
+      }
+    }
+  ],
+  "recipients": {
+    "email": [
+      "qa-team@example.com",
+      "release-managers@example.com"
+    ],
+    "webhook": [
+      "https://hooks.example.com/qa-automation"
+    ]
+  }
+}
