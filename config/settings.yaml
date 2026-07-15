@@ -13,15 +13,26 @@ reporting:
   retain_days: 14
 
 execution:
-  parallel: false
-  max_workers: 1
-  default_timeout_seconds: 60
-  retry_failed: 1
+  parallel: true
+  max_workers: 4
+  default_timeout_seconds: 90
+  retry_failed: 2
+  fail_fast: false
 
 integrations:
   jira:
     enabled: false
     project_key: TCP
   slack:
-    enabled: false
-    channel: "#qa-automation"
+    enabled: true
+    channel: "#release-65-5-alerts"
+    notify_on:
+      - failure
+      - flaky
+
+features:
+  transactions_v2: true
+  refunds:
+    enabled: true
+    max_amount: 10000
+    auto_approve_below: 50

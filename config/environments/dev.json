@@ -3,12 +3,17 @@
   "api": {
     "base_url": "https://dev-api.testcherrypick.local",
     "version": "v1",
-    "timeout_seconds": 30,
-    "retries": 2,
+    "timeout_seconds": 60,
+    "retries": 4,
+    "rate_limit": {
+      "requests_per_minute": 1200,
+      "burst": 100
+    },
     "endpoints": {
       "login": "/auth/login",
       "accounts": "/accounts",
-      "transactions": "/transactions"
+      "transactions": "/transactions",
+      "refunds": "/transactions/refunds"
     }
   },
   "ui": {
@@ -27,9 +32,22 @@
   },
   "feature_flags": {
     "new_login_flow": true,
-    "beta_dashboard": true
+    "beta_dashboard": true,
+    "transactions_v2": true,
+    "refunds_enabled": true
   },
   "credentials": {
     "vault_path": "secret/dev/testcherrypick"
+  },
+  "notifications": {
+    "email": {
+      "enabled": true,
+      "smtp_host": "smtp.dev.testcherrypick.local",
+      "from_address": "dev-automation@testcherrypick.local"
+    },
+    "webhook": {
+      "enabled": true,
+      "url": "https://hooks.dev.testcherrypick.local/qa"
+    }
   }
 }

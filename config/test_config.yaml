@@ -16,12 +16,30 @@ suites:
       exclude:
         - flaky
         - wip
+  transactions:
+    enabled: true
+    tags:
+      include:
+        - regression
+        - transactions
+      exclude:
+        - wip
+  retry:
+    enabled: true
+    tags:
+      include:
+        - regression
+        - retry
+      exclude:
+        - wip
 
 data:
   users_file: data/test_data/users.json
   accounts_file: data/test_data/accounts.json
   transactions_file: data/test_data/transactions.json
+  refunds_file: data/test_data/refunds.json
 
 thresholds:
   api_response_ms: 800
   page_load_ms: 3000
+  refund_processing_ms: 1500
