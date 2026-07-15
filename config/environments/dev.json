@@ -8,7 +8,8 @@
     "endpoints": {
       "login": "/auth/login",
       "accounts": "/accounts",
-      "transactions": "/transactions"
+      "transactions": "/transactions",
+      "refunds": "/transactions/refunds"
     }
   },
   "ui": {
@@ -27,7 +28,9 @@
   },
   "feature_flags": {
     "new_login_flow": true,
-    "beta_dashboard": true
+    "beta_dashboard": true,
+    "transactions_v2": true,
+    "refunds_enabled": true
   },
   "credentials": {
     "vault_path": "secret/dev/testcherrypick"
