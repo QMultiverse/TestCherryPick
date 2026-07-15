@@ -34,11 +34,11 @@ class DataLoader:
     def refunds_for_transaction(self, txn_id: str) -> List[Dict[str, Any]]:
         return [r for r in self.load_refunds() if r.get("original_txn") == txn_id]
 
-    def find_user(self, username: str) -> Optional[Dict[str, Any]]:
+    def find_user(self, username: str) -> Dict[str, Any]:
         for user in self.load_users():
             if user.get("username") == username:
                 return user
-        return None
+        raise KeyError(f"User not found: {username!r}")
 
     def accounts_for_owner(self, owner_id: str) -> List[Dict[str, Any]]:
         return [acc for acc in self.load_accounts() if acc.get("owner") == owner_id]
