@@ -13,10 +13,11 @@ reporting:
   retain_days: 14
 
 execution:
-  parallel: false
-  max_workers: 2
-  default_timeout_seconds: 120
-  retry_failed: 0
+  parallel: true
+  max_workers: 4
+  default_timeout_seconds: 90
+  retry_failed: 2
+  fail_fast: false
 
 integrations:
   jira:
