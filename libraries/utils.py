@@ -18,6 +18,8 @@ def deep_get(source: Dict[str, Any], dotted_key: str, default: Any = None) -> An
 
 def mask_secret(value: str, visible: int = 2) -> str:
     """Mask all but the last ``visible`` characters of a secret."""
+    if not isinstance(value, str):
+        raise TypeError("mask_secret expects a string value")
     if not value:
         return ""
     if len(value) <= visible:
