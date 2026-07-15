@@ -34,9 +34,10 @@ class DataLoader:
     def refunds_for_transaction(self, txn_id: str) -> List[Dict[str, Any]]:
         return [r for r in self.load_refunds() if r.get("original_txn") == txn_id]
 
-    def find_user(self, username: str) -> Dict[str, Any]:
+    def find_user(self, username: str) -> Optional[Dict[str, Any]]:
+        target = username.strip().lower()
         for user in self.load_users():
-            if user.get("username") == username:
+            if user.get("username", "").strip().lower() == target:
                 return user
         raise KeyError(f"User not found: {username!r}")
 
