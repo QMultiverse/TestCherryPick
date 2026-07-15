@@ -3,8 +3,8 @@
   "api": {
     "base_url": "https://qa-api.testcherrypick.local",
     "version": "v1",
-    "timeout_seconds": 45,
-    "retries": 3,
+    "timeout_seconds": 60,
+    "retries": 2,
     "endpoints": {
       "login": "/auth/login",
       "accounts": "/accounts",
