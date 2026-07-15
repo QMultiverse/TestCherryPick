@@ -24,8 +24,8 @@ integrations:
     enabled: false
     project_key: TCP
   slack:
-    enabled: false
-    channel: "#qa-automation"
+    enabled: true
+    channel: "#release-65-5-alerts"
 
 features:
   transactions_v2: true
