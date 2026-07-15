@@ -47,3 +47,11 @@ logging:
     path: results/automation.log
     rotate_mb: 20
     backups: 5
+
+export:
+  enabled: true
+  format: json
+  destination: results/exports
+  include:
+    - suite_totals
+    - failed_tests
