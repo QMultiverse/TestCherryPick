@@ -24,8 +24,11 @@ integrations:
     enabled: false
     project_key: TCP
   slack:
-    enabled: false
-    channel: "#qa-automation"
+    enabled: true
+    channel: "#qa-notifications"
+    notify_on:
+      - failure
+      - flaky
 
 features:
   transactions_v2: true
