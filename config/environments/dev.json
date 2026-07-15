@@ -38,5 +38,16 @@
   },
   "credentials": {
     "vault_path": "secret/dev/testcherrypick"
+  },
+  "notifications": {
+    "email": {
+      "enabled": true,
+      "smtp_host": "smtp.dev.testcherrypick.local",
+      "from_address": "dev-automation@testcherrypick.local"
+    },
+    "webhook": {
+      "enabled": true,
+      "url": "https://hooks.dev.testcherrypick.local/qa"
+    }
   }
 }

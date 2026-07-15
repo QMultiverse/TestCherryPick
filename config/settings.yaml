@@ -26,6 +26,9 @@ integrations:
   slack:
     enabled: true
     channel: "#release-65-5-alerts"
+    notify_on:
+      - failure
+      - flaky
 
 features:
   transactions_v2: true
