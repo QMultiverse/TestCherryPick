@@ -12,10 +12,12 @@ class ApiClient:
 
     ROBOT_LIBRARY_SCOPE = "SUITE"
 
-    def __init__(self, base_url: str, timeout_seconds: int = 30) -> None:
+    def __init__(self, base_url: str, timeout_seconds: int = 30, verify_ssl: bool = True) -> None:
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout_seconds
+        self.verify_ssl = verify_ssl
         self._session = requests.Session()
+        self._session.headers["Accept"] = "application/json"
         self._token: Optional[str] = None
 
     def set_auth_token(self, token: str) -> None:
@@ -26,7 +28,11 @@ class ApiClient:
         return f"{self.base_url}/{path.lstrip('/')}"
 
     def get(self, path: str, params: Optional[Dict[str, Any]] = None) -> requests.Response:
-        return self._session.get(self._url(path), params=params, timeout=self.timeout)
+        return self._session.get(
+            self._url(path), params=params, timeout=self.timeout, verify=self.verify_ssl
+        )
 
     def post(self, path: str, payload: Optional[Dict[str, Any]] = None) -> requests.Response:
-        return self._session.post(self._url(path), json=payload, timeout=self.timeout)
+        return self._session.post(
+            self._url(path), json=payload, timeout=self.timeout, verify=self.verify_ssl
+        )
