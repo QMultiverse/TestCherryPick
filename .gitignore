@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# Robot Framework artifacts
+output.xml
+log.html
+report.html
+selenium-screenshot-*.png
+*.robot.log
+results/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.secret
+config/secrets.local.json
