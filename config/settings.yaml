@@ -10,7 +10,7 @@ reporting:
     - xml
     - html
   screenshots_on_failure: true
-  retain_days: 14
+  retain_days: 25
 
 execution:
   parallel: true
@@ -36,3 +36,14 @@ features:
     enabled: true
     max_amount: 10000
     auto_approve_below: 50
+
+logging:
+  level: INFO
+  format: json
+  destinations:
+    - stdout
+    - file
+  file:
+    path: results/automation.log
+    rotate_mb: 20
+    backups: 5
