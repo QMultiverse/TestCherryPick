@@ -1,0 +1,35 @@
+{
+  "environment": "prod",
+  "api": {
+    "base_url": "https://api.testcherrypick.com",
+    "version": "v1",
+    "timeout_seconds": 60,
+    "retries": 1,
+    "endpoints": {
+      "login": "/auth/login",
+      "accounts": "/accounts",
+      "transactions": "/transactions"
+    }
+  },
+  "ui": {
+    "base_url": "https://app.testcherrypick.com",
+    "browser": "chrome",
+    "implicit_wait_seconds": 15
+  },
+  "database": {
+    "host": "prod-db.internal",
+    "port": 5432,
+    "name": "tcp_prod",
+    "pool": {
+      "min": 5,
+      "max": 30
+    }
+  },
+  "feature_flags": {
+    "new_login_flow": false,
+    "beta_dashboard": false
+  },
+  "credentials": {
+    "vault_path": "secret/prod/testcherrypick"
+  }
+}

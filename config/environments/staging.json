@@ -1,0 +1,35 @@
+{
+  "environment": "staging",
+  "api": {
+    "base_url": "https://staging-api.testcherrypick.local",
+    "version": "v1",
+    "timeout_seconds": 60,
+    "retries": 3,
+    "endpoints": {
+      "login": "/auth/login",
+      "accounts": "/accounts",
+      "transactions": "/transactions"
+    }
+  },
+  "ui": {
+    "base_url": "https://staging.testcherrypick.local",
+    "browser": "chrome",
+    "implicit_wait_seconds": 10
+  },
+  "database": {
+    "host": "staging-db.internal",
+    "port": 5432,
+    "name": "tcp_staging",
+    "pool": {
+      "min": 2,
+      "max": 15
+    }
+  },
+  "feature_flags": {
+    "new_login_flow": false,
+    "beta_dashboard": false
+  },
+  "credentials": {
+    "vault_path": "secret/staging/testcherrypick"
+  }
+}
