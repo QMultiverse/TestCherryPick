@@ -16,7 +16,7 @@ def deep_get(source: Dict[str, Any], dotted_key: str, default: Any = None) -> An
     return node
 
 
-def mask_secret(value: str, visible: int = 4) -> str:
+def mask_secret(value: str, visible: int = 2) -> str:
     """Mask all but the last ``visible`` characters of a secret."""
     if not value:
         return ""
