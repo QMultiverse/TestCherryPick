@@ -14,9 +14,9 @@ reporting:
 
 execution:
   parallel: false
-  max_workers: 1
-  default_timeout_seconds: 60
-  retry_failed: 1
+  max_workers: 2
+  default_timeout_seconds: 120
+  retry_failed: 0
 
 integrations:
   jira:
