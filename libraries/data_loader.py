@@ -28,6 +28,12 @@ class DataLoader:
     def load_transactions(self) -> List[Dict[str, Any]]:
         return self._read("transactions.json").get("transactions", [])
 
+    def load_refunds(self) -> List[Dict[str, Any]]:
+        return self._read("refunds.json").get("refunds", [])
+
+    def refunds_for_transaction(self, txn_id: str) -> List[Dict[str, Any]]:
+        return [r for r in self.load_refunds() if r.get("original_txn") == txn_id]
+
     def find_user(self, username: str) -> Optional[Dict[str, Any]]:
         for user in self.load_users():
             if user.get("username") == username:
