@@ -1,0 +1,28 @@
+{
+  "refunds": [
+    {
+      "refund_id": "rf-3001",
+      "original_txn": "txn-9001",
+      "account_id": "acc-5001",
+      "amount": 42.50,
+      "currency": "GBP",
+      "status": "approved",
+      "reason": {
+        "code": "DUPLICATE_CHARGE",
+        "notes": "Customer charged twice at Corner Cafe"
+      }
+    },
+    {
+      "refund_id": "rf-3002",
+      "original_txn": "txn-9003",
+      "account_id": "acc-5003",
+      "amount": 300.00,
+      "currency": "USD",
+      "status": "pending",
+      "reason": {
+        "code": "ITEM_NOT_RECEIVED",
+        "notes": "Order never delivered"
+      }
+    }
+  ]
+}
