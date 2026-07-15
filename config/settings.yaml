@@ -25,3 +25,10 @@ integrations:
   slack:
     enabled: false
     channel: "#qa-automation"
+
+features:
+  transactions_v2: true
+  refunds:
+    enabled: true
+    max_amount: 10000
+    auto_approve_below: 50
