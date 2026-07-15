@@ -1,0 +1,40 @@
+{
+  "transactions": [
+    {
+      "txn_id": "txn-9001",
+      "account_id": "acc-5001",
+      "type": "debit",
+      "amount": 42.50,
+      "currency": "GBP",
+      "status": "settled",
+      "metadata": {
+        "merchant": "Corner Cafe",
+        "category": "food"
+      }
+    },
+    {
+      "txn_id": "txn-9002",
+      "account_id": "acc-5001",
+      "type": "credit",
+      "amount": 1200.00,
+      "currency": "GBP",
+      "status": "settled",
+      "metadata": {
+        "merchant": "Payroll",
+        "category": "salary"
+      }
+    },
+    {
+      "txn_id": "txn-9003",
+      "account_id": "acc-5003",
+      "type": "debit",
+      "amount": 300.00,
+      "currency": "USD",
+      "status": "pending",
+      "metadata": {
+        "merchant": "Online Store",
+        "category": "shopping"
+      }
+    }
+  ]
+}
