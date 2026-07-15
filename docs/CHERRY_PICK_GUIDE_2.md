@@ -39,6 +39,15 @@ Since the round-1 merge, the two branches diverged **on the same files**:
 > ⚠️ **SHAs are illustrative** — always read the live ones from the **Log** tab
 > or `git log --oneline 65-5-Current..65-5-Future`.
 
+> 🔎 **Heads-up — that range shows *14* commits, not 6.** Round 1 promoted the
+> `CHP-001xx` commits by **cherry-pick**, which creates **new SHAs** on
+> `65-5-Current`. Git therefore still counts the 8 round-1 originals on
+> `65-5-Future` as "missing" from Current, even though their *content* is
+> already there. **Ignore those** — for round 2 you cherry-pick **only the 6
+> `CHP-002xx` commits** listed above. (If you did accidentally include a
+> round-1 commit, Git would report it as *empty / already applied* — harmless,
+> but skip it with `git cherry-pick --skip` / *Skip* in PyCharm.)
+
 > 💡 **Note on `CHP-00201`:** it edits *two* files but only **qa.json**
 > conflicts — **dev.json** applies cleanly (Current never touched it). Git
 > pauses on the whole commit until you resolve qa.json, even though dev.json is
