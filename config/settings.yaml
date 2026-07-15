@@ -10,7 +10,7 @@ reporting:
     - xml
     - html
   screenshots_on_failure: true
-  retain_days: 14
+  retain_days: 30
 
 execution:
   parallel: true
