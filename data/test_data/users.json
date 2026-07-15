@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "u-1001",
+      "username": "standard_user",
+      "role": "customer",
+      "profile": {
+        "first_name": "Alice",
+        "last_name": "Norman",
+        "email": "alice.norman@example.com",
+        "preferences": {
+          "language": "en-GB",
+          "notifications": {
+            "email": true,
+            "sms": false
+          }
+        }
+      }
+    },
+    {
+      "id": "u-1002",
+      "username": "admin_user",
+      "role": "admin",
+      "profile": {
+        "first_name": "Ben",
+        "last_name": "Carter",
+        "email": "ben.carter@example.com",
+        "preferences": {
+          "language": "en-US",
+          "notifications": {
+            "email": true,
+            "sms": true
+          }
+        }
+      }
+    }
+  ]
+}

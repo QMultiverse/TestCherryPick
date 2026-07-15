@@ -1,0 +1,37 @@
+{
+  "accounts": [
+    {
+      "account_id": "acc-5001",
+      "owner": "u-1001",
+      "type": "current",
+      "currency": "GBP",
+      "balance": 1540.75,
+      "limits": {
+        "daily_withdrawal": 500,
+        "daily_transfer": 2000
+      }
+    },
+    {
+      "account_id": "acc-5002",
+      "owner": "u-1001",
+      "type": "savings",
+      "currency": "GBP",
+      "balance": 8200.00,
+      "limits": {
+        "daily_withdrawal": 250,
+        "daily_transfer": 1000
+      }
+    },
+    {
+      "account_id": "acc-5003",
+      "owner": "u-1002",
+      "type": "current",
+      "currency": "USD",
+      "balance": 12750.10,
+      "limits": {
+        "daily_withdrawal": 1000,
+        "daily_transfer": 5000
+      }
+    }
+  ]
+}
